@@ -1,7 +1,3 @@
-""" 8 Puzzle BFS algorithm
- Input the unsolved puzzle and the program
- solves it and creates 3 txt files with solutions"""
-
 import numpy as np  # Used to store the digits in an array
 import os  # Used to delete the file created by previous running of the program
 
