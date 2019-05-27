@@ -175,7 +175,7 @@ class Nodes():
         print ('Time performance:',str(queue_num_nodes_popped),'nodes popped off the queue.')
         print ('Space performance:', str(queue_max_length),'nodes in the queue at its max.')
         print ('Time spent: %0.2fs' % (time.time()-start))
-        return x
+        return "{0:.2f}".format((time.time()-start))
     
       else:     
         # see if moving upper tile down is a valid move
@@ -269,4 +269,5 @@ def astar_solver(data):
   # A*1 search based on path cost+heuristic cost, using priority queue
   x = root_node.a_star_search(goal_state, heuristic_function = 'num_misplaced')
 
-  return x[1:]
+  # return x[1:] ##to return moves
+  return x

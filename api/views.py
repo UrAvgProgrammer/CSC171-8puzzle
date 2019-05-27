@@ -42,5 +42,5 @@ def solve_astar(lists):
 	lists = lists.split(",")
 	lists = [ int(x) for x in lists ]
 	print(lists)
-	z = astar_solver(lists)
+	z = str(astar_solver(lists))
 	return jsonify({'message':z})
