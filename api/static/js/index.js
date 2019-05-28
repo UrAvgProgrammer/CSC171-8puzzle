@@ -111,7 +111,7 @@ function astar(){
     location.reload();
             }
         });
-}
+};
 
 function getind(list){
     var i;
@@ -120,7 +120,7 @@ function getind(list){
             return i
         }
     }
-}
+};
 
 function new_state(x, sol){
     var d;
@@ -199,11 +199,12 @@ function new_state(x, sol){
     alert('try again?');
     console.log('end');
     location.reload();
-}
+};
 
 function moveit(state){
 
     var tiles = state;
+
     var $target = undefined;
 
     var renderTiles = function ($newTarget) {
@@ -223,11 +224,35 @@ function moveit(state){
                 "data-tile": this,
             });
             $li.text(this);
+            $li.click({index: index}, shiftTile);
             $ul.append($li);
         })
 
+        $target.html($ul);
     };
-    renderTiles();
+
+    var shiftTile = function (event) {
+        // var index = event.data.index;
+
+        // var targetIndex = -1;
+        // if (index - 1 >= 0 && tiles[index - 1] == 0) { // check left
+        //     targetIndex = index - 1;
+        // } else if (index + 1 < tiles.length && tiles[index + 1] == 0) { // check right
+        //     targetIndex = index + 1;
+        // } else if (index - 3 >= 0 && tiles[index - 3] == 0) { //check up
+        //     targetIndex = index - 3;
+        // } else if (index + 3 < tiles.length && tiles[index + 3] == 0) { // check down
+        //     targetIndex = index + 3;
+        // }
+
+        // if (targetIndex != -1) {
+        //     var temp = tiles[targetIndex];
+        //     tiles[targetIndex] = tiles[index];
+        //     tiles[index] = temp;
+            renderTiles();
+        // }
+        event.preventDefault();
+    };
    renderTiles($('.eight-puzzle'));
 
 };
